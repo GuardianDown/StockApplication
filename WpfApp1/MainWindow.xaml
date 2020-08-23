@@ -1,0 +1,70 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Отчет" Height="372.365" Width="800">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="272" Margin="10,10,0,0" VerticalAlignment="Top" Width="773">
+            <TabItem x:Name="TabItemAll" Header="Все">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DataGridAll" ItemsSource="{Binding}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="763" Margin="0,0,-0.009,0" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=Id}" ClipboardContentBinding="{x:Null}" Header="ID"/>
+                            <DataGridTextColumn Binding="{Binding Path=Name}" ClipboardContentBinding="{x:Null}" Header="Имя"/>
+                            <DataGridTextColumn Binding="{Binding Path=Category}" ClipboardContentBinding="{x:Null}" Header="Категория"/>
+                            <DataGridTextColumn Binding="{Binding Path=Cost}" ClipboardContentBinding="{x:Null}" Header="Стоимость"/>
+                            <DataGridTextColumn Binding="{Binding Path=Date, StringFormat='dd.MM.yyyy'}" ClipboardContentBinding="{x:Null}" Header="Дата обновления статуса"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItemAccepted" Header="Принят">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DataGridAccepted" ItemsSource="{Binding}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="763" Margin="0,0,-0.009,0" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=Id}" ClipboardContentBinding="{x:Null}" Header="ID"/>
+                            <DataGridTextColumn Binding="{Binding Path=Name}" ClipboardContentBinding="{x:Null}" Header="Имя"/>
+                            <DataGridTextColumn Binding="{Binding Path=Category}" ClipboardContentBinding="{x:Null}" Header="Категория"/>
+                            <DataGridTextColumn Binding="{Binding Path=Cost}" ClipboardContentBinding="{x:Null}" Header="Стоимость"/>
+                            <DataGridTextColumn Binding="{Binding Path=Date, StringFormat='dd.MM.yyyy'}" ClipboardContentBinding="{x:Null}" Header="Дата обновления статуса"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="ButtonAcceptedAdd" Content="Добавить" HorizontalAlignment="Left" Margin="334,214,0,0" VerticalAlignment="Top" Width="75" Click="ButtonAcceptedAdd_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItemStock" Header="На складе">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DataGridStock" ItemsSource="{Binding}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="763" Margin="0,0,-0.009,0" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=Id}" ClipboardContentBinding="{x:Null}" Header="ID"/>
+                            <DataGridTextColumn Binding="{Binding Path=Name}" ClipboardContentBinding="{x:Null}" Header="Имя"/>
+                            <DataGridTextColumn Binding="{Binding Path=Category}" ClipboardContentBinding="{x:Null}" Header="Категория"/>
+                            <DataGridTextColumn Binding="{Binding Path=Cost}" ClipboardContentBinding="{x:Null}" Header="Стоимость"/>
+                            <DataGridTextColumn Binding="{Binding Path=Date, StringFormat='dd.MM.yyyy'}" ClipboardContentBinding="{x:Null}" Header="Дата обновления статуса"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TabItemSold" Header="Продан">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DataGridSold" ItemsSource="{Binding}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="763" Margin="0,0,-0.009,0" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=Id}" ClipboardContentBinding="{x:Null}" Header="ID"/>
+                            <DataGridTextColumn Binding="{Binding Path=Name}" ClipboardContentBinding="{x:Null}" Header="Имя"/>
+                            <DataGridTextColumn Binding="{Binding Path=Category}" ClipboardContentBinding="{x:Null}" Header="Категория"/>
+                            <DataGridTextColumn Binding="{Binding Path=Cost}" ClipboardContentBinding="{x:Null}" Header="Стоимость"/>
+                            <DataGridTextColumn Binding="{Binding Path=Date, StringFormat='dd.MM.yyyy'}" ClipboardContentBinding="{x:Null}" Header="Дата обновления статуса"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <DatePicker x:Name="DatePickerFrom" HorizontalAlignment="Left" Margin="237,296,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="DatePickerTo" HorizontalAlignment="Left" Margin="479,296,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="208,300,0,0" TextWrapping="Wrap" Text="От" VerticalAlignment="Top" RenderTransformOrigin="1.825,0.548"/>
+        <TextBlock HorizontalAlignment="Left" Margin="448,300,0,0" TextWrapping="Wrap" Text="До" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
